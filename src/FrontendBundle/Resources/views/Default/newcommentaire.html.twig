@@ -1,0 +1,38 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+<div class="col-md-6 col-md-offset-3 form-new">
+	
+	<div class="col-md-12">
+		<h1>Ajoutez un nouveau commentaire</h1>
+		<hr>
+	</div>
+
+	{{ form_start() }}
+		<div class="col-md-12">
+			{{ form_label(form.titre) }}
+		</div>
+		<div class="col-md-12">
+			{{ form_widget(form.titre) }}
+		</div>
+		<div class="col-md-12">
+			{{ form_label(form.contenu) }}
+		</div>
+		<div class="col-md-12">
+			{{ form_widget(form.contenu) }}
+		</div>
+		<div class="col-md-12">
+			{{ form_label(form.date) }}
+		</div>
+		<div class="col-md-12">
+			{{ form_widget(form.date) }}
+		</div>
+		<div class="col-md-12">
+			<hr>
+			<input type="submit">
+		</div>
+	{{ form_end() }}
+</div>
+
+{% endblock %} 

@@ -125,9 +125,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'FrontendBundle\\Controller\\DefaultController::articleAction',  '_route' => 'article_show',);
             }
 
-            // admin_film_new
-            if ($pathinfo === '/admin/film/new') {
-                return array (  '_controller' => 'FrontendBundle\\Controller\\DefaultController::newFilmAction',  '_route' => 'admin_film_new',);
+            if (0 === strpos($pathinfo, '/admin')) {
+                // admin_film_new
+                if ($pathinfo === '/admin/film/new') {
+                    return array (  '_controller' => 'FrontendBundle\\Controller\\DefaultController::newFilmAction',  '_route' => 'admin_film_new',);
+                }
+
+                // admin_commentaire_new
+                if ($pathinfo === '/admin/commentaire/new') {
+                    return array (  '_controller' => 'FrontendBundle\\Controller\\CommentaireController::newCommentaireAction',  '_route' => 'admin_commentaire_new',);
+                }
+
             }
 
         }
